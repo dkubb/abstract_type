@@ -2,7 +2,7 @@
 
 require 'rake'
 
-require File.expand_path('../lib/abstract/version', __FILE__)
+require File.expand_path('../lib/abstract_class/version', __FILE__)
 
 FileList['tasks/**/*.rake'].each { |task| import task }
 
