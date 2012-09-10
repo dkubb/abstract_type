@@ -1,12 +1,12 @@
-abstract
-========
+abstract_class
+==============
 
-[![Build Status](https://secure.travis-ci.org/dkubb/abstract.png?branch=master)](http://travis-ci.org/dkubb/abstract)
-[![Dependency Status](https://gemnasium.com/dkubb/abstract.png)](https://gemnasium.com/dkubb/abstract)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract)
+[![Build Status](https://secure.travis-ci.org/dkubb/abstract_class.png?branch=master)](http://travis-ci.org/dkubb/abstract_class)
+[![Dependency Status](https://gemnasium.com/dkubb/abstract_class.png)](https://gemnasium.com/dkubb/abstract_class)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract_class)
 
 This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
-It allows to declare abstract classes and modules in an unobstrusive way.
+It allows to declare abstract_class classes and modules in an unobstrusive way.
 
 Installation
 ------------
@@ -16,7 +16,7 @@ There is no gem release yet so use git source.
 In your **Gemfile**
 
 ``` ruby
-gem 'abstract', :git => 'https://github.com/dkubb/abstract'
+gem 'abstract_class', :git => 'https://github.com/dkubb/abstract_class'
 ```
 
 Examples
