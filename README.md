@@ -1,9 +1,9 @@
 abstract
 ========
 
-[![Build Status](https://secure.travis-ci.org/mbj/abstract.png?branch=master)](http://travis-ci.org/mbj/abstract)
-[![Dependency Status](https://gemnasium.com/mbj/abstract.png)](https://gemnasium.com/mbj/abstract)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/mbj/abstract)
+[![Build Status](https://secure.travis-ci.org/dkubb/abstract.png?branch=master)](http://travis-ci.org/dkubb/abstract)
+[![Dependency Status](https://gemnasium.com/dkubb/abstract.png)](https://gemnasium.com/dkubb/abstract)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract)
 
 This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
 It allows to declare abstract classes and modules in an unobstrusive way.
@@ -16,7 +16,7 @@ There is no gem release yet so use git source.
 In your **Gemfile**
 
 ``` ruby
-gem 'abstract', :git => 'https://github.com/mbj/abstract'
+gem 'abstract', :git => 'https://github.com/dkubb/abstract'
 ```
 
 Examples
@@ -24,7 +24,7 @@ Examples
 
 ``` ruby
 class Foo
-  include Abstract
+  include AbstractClass
 
   # Declare abstract instance method
   abstract :bar
@@ -48,7 +48,7 @@ Credits
 -------
 
 * Dan Kubb ([dkubb](https://github.com/dkubb))
-* Markus Schirp ([mbj](https://github.com/mbj))
+* Markus Schirp ([dkubb](https://github.com/mbj))
 
 Contributing
 -------------
@@ -64,8 +64,7 @@ Contributing
 License
 -------
 
-Copyright (c) 2011-2012 Piotr Solnica
-Copyright (c) 2012 Markus Schirp (packaging)
+Copyright (c) 2001-2012 Dan Kubb
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

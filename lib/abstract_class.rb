@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 # Module to allow class and methods to be abstract
-module Abstract
+module AbstractClass
 
   # Hook called when module is included
   #
@@ -14,7 +14,7 @@ module Abstract
   #
   def self.included(descendant)
     super
-    descendant.extend ClassMethods
+    descendant.extend(ClassMethods)
     self
   end
 

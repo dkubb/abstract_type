@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Abstract::ClassMethods, '#abstract_method' do
+describe AbstractClass::ClassMethods, '#abstract_method' do
   subject { object.some_method }
 
   let(:abstract_class) do 
@@ -15,7 +15,7 @@ describe Abstract::ClassMethods, '#abstract_method' do
 
   let(:class_under_test)do
     Class.new(abstract_class) do
-      def self.name; "TheClassName"; end
+      def self.name; 'TheClassName'; end
     end
   end
 

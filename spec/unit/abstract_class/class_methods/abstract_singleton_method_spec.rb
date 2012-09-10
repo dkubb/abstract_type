@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Abstract::ClassMethods, '#abstract_method' do
+describe AbstractClass::ClassMethods, '#abstract_method' do
   subject { object.some_method }
 
   let(:object) do 
@@ -16,6 +16,6 @@ describe Abstract::ClassMethods, '#abstract_method' do
   end
 
   it 'creates an abstract method' do
-    expect { subject }.to raise_error(NotImplementedError,'TheClassName.some_method is not implemented')
+    expect { subject }.to raise_error(NotImplementedError, 'TheClassName.some_method is not implemented')
   end
 end

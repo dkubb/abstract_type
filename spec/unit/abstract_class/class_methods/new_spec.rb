@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Abstract::ClassMethods, '#new' do
+describe AbstractClass::ClassMethods, '#new' do
   subject { object.new }
 
   let(:abstract_class) { Class.new { include Abstract } }
