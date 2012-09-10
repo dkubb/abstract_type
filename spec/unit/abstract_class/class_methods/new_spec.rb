@@ -5,7 +5,7 @@ require 'spec_helper'
 describe AbstractClass::ClassMethods, '#new' do
   subject { object.new }
 
-  let(:abstract_class) { Class.new { include Abstract } }
+  let(:abstract_class) { Class.new { include AbstractClass } }
 
   context 'called on a subclass' do
     let(:object) { Class.new(abstract_class) }

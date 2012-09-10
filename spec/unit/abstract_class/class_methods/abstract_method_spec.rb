@@ -7,7 +7,7 @@ describe AbstractClass::ClassMethods, '#abstract_method' do
 
   let(:abstract_class) do 
     Class.new do 
-      include Abstract
+      include AbstractClass
 
       abstract_method :some_method
     end
