@@ -5,8 +5,8 @@ require 'spec_helper'
 describe AbstractClass::ClassMethods, '#abstract_method' do
   subject { object.some_method }
 
-  let(:abstract_class) do 
-    Class.new do 
+  let(:abstract_class) do
+    Class.new do
       include AbstractClass
 
       abstract_method :some_method

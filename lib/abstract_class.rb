@@ -86,7 +86,7 @@ module AbstractClass
 
   private
 
-    # Create abstract signleton method 
+    # Create abstract signleton method
     #
     # @param [String|Symbol] name
     #   the name of the method to create
@@ -103,7 +103,7 @@ module AbstractClass
       RUBY
     end
 
-    # Create abstract instance method 
+    # Create abstract instance method
     #
     # @param [String|Symbol] name
     #   the name of the method to create
