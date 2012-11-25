@@ -11,7 +11,6 @@ module AbstractClass
   # @return [self]
   #
   # @api private
-  #
   def self.included(descendant)
     super
     descendant.extend(ClassMethods)
@@ -31,7 +30,6 @@ module AbstractClass
     # @return [Object]
     #
     # @api public
-    #
     def new(*)
       if superclass.equal?(Object)
         raise NotImplementedError, "#{self} is an abstract class"
@@ -54,12 +52,8 @@ module AbstractClass
     #   end
     #
     # @api public
-    #
     def abstract_method(*names)
-      names.each do |name|
-        create_abstract_instance_method(name)
-      end
-
+      names.each { |name| create_abstract_instance_method(name) }
       self
     end
 
@@ -75,12 +69,8 @@ module AbstractClass
     # @return [self]
     #
     # @api private
-    #
     def abstract_singleton_method(*names)
-      names.each do |name|
-        create_abstract_singleton_method(name)
-      end
-
+      names.each { |name| create_abstract_singleton_method(name) }
       self
     end
 
@@ -94,12 +84,11 @@ module AbstractClass
     # @return [undefined]
     #
     # @api private
-    #
     def create_abstract_singleton_method(name)
-      class_eval(<<-RUBY, __FILE__, __LINE__+1)
-        def self.#{name}(*)
-          raise NotImplementedError, "\#{name}.\#{__method__} is not implemented"
-        end
+      class_eval <<-RUBY, __FILE__, __LINE__ + 1
+        def self.#{name}(*)                                                        # def self.name(*)
+          raise NotImplementedError, "\#{name}.\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass#name is not implemented'
+        end                                                                        # end
       RUBY
     end
 
@@ -111,12 +100,11 @@ module AbstractClass
     # @return [undefined]
     #
     # @api private
-    #
     def create_abstract_instance_method(name)
-      class_eval(<<-RUBY, __FILE__, __LINE__+1)
-        def #{name}(*)
-          raise NotImplementedError, "\#{self.class.name}#\#{__method__} is not implemented"
-        end
+      class_eval <<-RUBY, __FILE__, __LINE__ + 1
+        def #{name}(*)                                                                        # def name(*)
+          raise NotImplementedError, "\#{self.class.name}#\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass.name is not implemented'
+        end                                                                                   # end
       RUBY
     end
 
