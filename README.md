@@ -11,12 +11,24 @@ It allows to declare abstract_class classes and modules in an unobstrusive way.
 Installation
 ------------
 
-There is no gem release yet so use git source.
+With Rubygems:
 
-In your **Gemfile**
+```bash
+$ gem install abstract_class
+$ irb -rubygems
+>> require 'abstract_class'
+=> true
+```
 
-``` ruby
-gem 'abstract_class', :git => 'https://github.com/dkubb/abstract_class'
+With git and local working copy:
+
+```bash
+$ git clone git://github.com/dkubb/abstract_class.git
+$ cd abstract_class
+$ rake install
+$ irb -rubygems
+>> require 'abstract_class'
+=> true
 ```
 
 Examples
@@ -33,14 +45,14 @@ class Foo
   abstract_singleton_method :singleton_method
 end
 
-Foo.new              # raises NotImplementedError: Foo is an abstract class
-Foo.singleton_method # raises NotImplementedError: Foo.bar is not implemented
+Foo.new               # raises NotImplementedError: Foo is an abstract class
+Foo.singleton_method  # raises NotImplementedError: Foo.bar is not implemented
 
 # Subclassing to allow instancitation
 class Baz < Foo; end
 
 object = Baz.new
-object.bar # raises NotImplementedError: Baz#bar is not implemented
+object.bar  # raises NotImplementedError: Baz#bar is not implemented
 
 ```
 
@@ -49,9 +61,6 @@ Credits
 
 * Dan Kubb ([dkubb](https://github.com/dkubb))
 * Markus Schirp ([dkubb](https://github.com/mbj))
-
-Contributing
--------------
 
 Contributing
 -------------
