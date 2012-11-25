@@ -48,7 +48,7 @@ end
 Foo.new               # raises NotImplementedError: Foo is an abstract class
 Foo.singleton_method  # raises NotImplementedError: Foo.bar is not implemented
 
-# Subclassing to allow instancitation
+# Subclassing to allow instanciation
 class Baz < Foo; end
 
 object = Baz.new
