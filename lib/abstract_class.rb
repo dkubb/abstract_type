@@ -86,7 +86,7 @@ module AbstractClass
 
   private
 
-    # Create abstract signleton method
+    # Create abstract singleton method
     #
     # @param [String|Symbol] name
     #   the name of the method to create
