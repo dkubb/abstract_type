@@ -40,16 +40,17 @@ module AbstractClass
 
     # Create abstract instance methods
     #
-    # @return [self]
-    #
     # @example
-    #
     #   class Foo
     #     include Abstract
     #
     #     # Create an abstract instance method
     #     abstract_method :some_method
     #   end
+    #
+    # @param [Array<#to_s>] names
+    #
+    # @return [self]
     #
     # @api public
     def abstract_method(*names)
@@ -59,12 +60,15 @@ module AbstractClass
 
     # Create abstract singleton methods
     #
+    # @example
     #   class Foo
     #     include Abstract
     #
     #     # Create an abstract instance method
     #     abstract_singleton_method :some_method
     #   end
+    #
+    # @param [Array<#to_s>] names
     #
     # @return [self]
     #
@@ -78,7 +82,7 @@ module AbstractClass
 
     # Create abstract singleton method
     #
-    # @param [String|Symbol] name
+    # @param [#to_s] name
     #   the name of the method to create
     #
     # @return [undefined]
@@ -94,7 +98,7 @@ module AbstractClass
 
     # Create abstract instance method
     #
-    # @param [String|Symbol] name
+    # @param [#to_s] name
     #   the name of the method to create
     #
     # @return [undefined]
