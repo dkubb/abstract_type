@@ -90,9 +90,9 @@ module AbstractType
     # @api private
     def create_abstract_singleton_method(name)
       class_eval <<-RUBY, __FILE__, __LINE__ + 1
-        def self.#{name}(*)                                                        # def self.name(*)
-          raise NotImplementedError, "\#{name}.\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass#name is not implemented'
-        end                                                                        # end
+        def self.#{name}(*)                                                                   # def self.name(*)
+          raise NotImplementedError, "\#{name || inspect}.\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass#name is not implemented'
+        end                                                                                   # end
       RUBY
     end
 
@@ -106,9 +106,9 @@ module AbstractType
     # @api private
     def create_abstract_instance_method(name)
       class_eval <<-RUBY, __FILE__, __LINE__ + 1
-        def #{name}(*)                                                                        # def name(*)
-          raise NotImplementedError, "\#{self.class.name}#\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass.name is not implemented'
-        end                                                                                   # end
+        def #{name}(*)                                                                                              # def name(*)
+          raise NotImplementedError, "\#{self.class.name || self.class.inspect}#\#{__method__} is not implemented"  #   raise NotImplementedError, 'MyClass.name is not implemented'
+        end                                                                                                         # end
       RUBY
     end
 
