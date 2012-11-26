@@ -13,10 +13,16 @@ describe AbstractType::ClassMethods, '#abstract_method' do
     end
   end
 
-  let(:class_under_test)do
-    Class.new(abstract_type) do
-      def self.name; 'TheClassName'; end
-    end
+  let(:class_under_test) do
+    Class.new(abstract_type)
+  end
+
+  before do
+    TheClassName = class_under_test
+  end
+
+  after do
+    Object.class_eval { remove_const(:TheClassName) }
   end
 
   let(:object) { class_under_test.new }

@@ -10,9 +10,15 @@ describe AbstractType::ClassMethods, '#abstract_method' do
       include AbstractType
 
       abstract_singleton_method :some_method
-
-      def self.name; 'TheClassName'; end
     end
+  end
+
+  before do
+    TheClassName = object
+  end
+
+  after do
+    Object.class_eval { remove_const(:TheClassName) }
   end
 
   it 'creates an abstract method' do
