@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require 'abstract_class'
+require 'abstract_type'
 require 'spec'
 require 'spec/autorun'
 

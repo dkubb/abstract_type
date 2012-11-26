@@ -32,9 +32,9 @@ begin
         raise "ruby2ruby version #{Ruby2Ruby::VERSION} may not work properly, 1.2.2 *only* is recommended for use with heckle"
       end
 
-      require 'abstract_class'
+      require 'abstract_type'
 
-      root_module_regexp = Regexp.union('AbstractClass')
+      root_module_regexp = Regexp.union('AbstractType')
 
       spec_dir = Pathname('spec/unit')
 

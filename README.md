@@ -1,12 +1,12 @@
-abstract_class
+abstract_type
 ==============
 
-[![Build Status](https://secure.travis-ci.org/dkubb/abstract_class.png?branch=master)](http://travis-ci.org/dkubb/abstract_class)
-[![Dependency Status](https://gemnasium.com/dkubb/abstract_class.png)](https://gemnasium.com/dkubb/abstract_class)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract_class)
+[![Build Status](https://secure.travis-ci.org/dkubb/abstract_type.png?branch=master)](http://travis-ci.org/dkubb/abstract_type)
+[![Dependency Status](https://gemnasium.com/dkubb/abstract_type.png)](https://gemnasium.com/dkubb/abstract_type)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract_type)
 
 This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
-It allows to declare abstract_class classes and modules in an unobstrusive way.
+It allows to declare abstract_type classes and modules in an unobstrusive way.
 
 Installation
 ------------
@@ -14,20 +14,20 @@ Installation
 With Rubygems:
 
 ```bash
-$ gem install abstract_class
+$ gem install abstract_type
 $ irb -rubygems
->> require 'abstract_class'
+>> require 'abstract_type'
 => true
 ```
 
 With git and local working copy:
 
 ```bash
-$ git clone git://github.com/dkubb/abstract_class.git
-$ cd abstract_class
+$ git clone git://github.com/dkubb/abstract_type.git
+$ cd abstract_type
 $ rake install
 $ irb -rubygems
->> require 'abstract_class'
+>> require 'abstract_type'
 => true
 ```
 
@@ -36,7 +36,7 @@ Examples
 
 ``` ruby
 class Foo
-  include AbstractClass
+  include AbstractType
 
   # Declare abstract instance method
   abstract :bar
@@ -45,7 +45,7 @@ class Foo
   abstract_singleton_method :singleton_method
 end
 
-Foo.new               # raises NotImplementedError: Foo is an abstract class
+Foo.new               # raises NotImplementedError: Foo is an abstract type
 Foo.singleton_method  # raises NotImplementedError: Foo.bar is not implemented
 
 # Subclassing to allow instanciation

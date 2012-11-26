@@ -2,12 +2,12 @@
 
 require 'spec_helper'
 
-describe AbstractClass::ClassMethods, '#abstract_method' do
+describe AbstractType::ClassMethods, '#abstract_method' do
   subject { object.some_method }
 
   let(:object) do
     Class.new do
-      include AbstractClass
+      include AbstractType
 
       abstract_singleton_method :some_method
 

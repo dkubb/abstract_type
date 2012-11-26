@@ -1,15 +1,15 @@
 # encoding: utf-8
 
-require File.expand_path('../lib/abstract_class/version', __FILE__)
+require File.expand_path('../lib/abstract_type/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name        = 'abstract_class'
-  gem.version     = AbstractClass::VERSION.dup
+  gem.name        = 'abstract_type'
+  gem.version     = AbstractType::VERSION.dup
   gem.authors     = [ 'Dan Kubb' ]
   gem.email       = %w[ dan.kubb@gmail.com ]
   gem.description = 'Module to declare abstract classes and methods'
   gem.summary     = gem.description
-  gem.homepage    = 'https://github.com/dkubb/abstract_class'
+  gem.homepage    = 'https://github.com/dkubb/abstract_type'
 
   gem.files            = `git ls-files`.split($/)
   gem.test_files       = `git ls-files -- {spec}/*`.split($/)

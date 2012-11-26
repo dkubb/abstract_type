@@ -2,19 +2,19 @@
 
 require 'spec_helper'
 
-describe AbstractClass::ClassMethods, '#abstract_method' do
+describe AbstractType::ClassMethods, '#abstract_method' do
   subject { object.some_method }
 
-  let(:abstract_class) do
+  let(:abstract_type) do
     Class.new do
-      include AbstractClass
+      include AbstractType
 
       abstract_method :some_method
     end
   end
 
   let(:class_under_test)do
-    Class.new(abstract_class) do
+    Class.new(abstract_type) do
       def self.name; 'TheClassName'; end
     end
   end

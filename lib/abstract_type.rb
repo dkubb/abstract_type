@@ -1,12 +1,12 @@
 # encoding: utf-8
 
 # Module to allow class and methods to be abstract
-module AbstractClass
+module AbstractType
 
   # Hook called when module is included
   #
   # @param [Module] descendant
-  #   the module or class including AbstractClass
+  #   the module or class including AbstractType
   #
   # @return [self]
   #
@@ -21,18 +21,18 @@ module AbstractClass
 
     # Instantiate a new object
     #
-    # Ensures that the instance cannot be of the abstract class
+    # Ensures that the instance cannot be of the abstract type
     # and must be a descendant.
     #
     # @example
-    #   object = AbstractClass.new
+    #   object = AbstractType.new
     #
     # @return [Object]
     #
     # @api public
     def new(*)
       if superclass.equal?(Object)
-        raise NotImplementedError, "#{self} is an abstract class"
+        raise NotImplementedError, "#{self} is an abstract type"
       else
         super
       end
