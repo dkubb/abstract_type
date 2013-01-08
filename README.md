@@ -39,16 +39,16 @@ class Foo
   include AbstractType
 
   # Declare abstract instance method
-  abstract :bar
+  abstract_method :bar
 
   # Declare abstract singleton method
-  abstract_singleton_method :singleton_method
+  abstract_singleton_method :baz
 end
 
-Foo.new               # raises NotImplementedError: Foo is an abstract type
-Foo.singleton_method  # raises NotImplementedError: Foo.bar is not implemented
+Foo.new  # raises NotImplementedError: Foo is an abstract type
+Foo.baz  # raises NotImplementedError: Foo.baz is not implemented
 
-# Subclassing to allow instanciation
+# Subclassing to allow instantiation
 class Baz < Foo; end
 
 object = Baz.new
