@@ -30,7 +30,7 @@ describe AbstractType::ClassMethods, '#abstract_singleton_method' do
       subclass.some_method
     rescue NotImplementedError => error
       error.message.should == 'Subclass.some_method is not implemented'
-      file, line = error.backtrace.first.split(':')[0, 2]
+      file, line = error.backtrace.first.split(':', 2)
       File.expand_path(file).should eql(File.expand_path('../../../../../lib/abstract_type.rb', __FILE__))
       line.to_i.should be(95)
     else
