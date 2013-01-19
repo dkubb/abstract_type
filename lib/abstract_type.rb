@@ -8,14 +8,15 @@ module AbstractType
   # @param [Module] descendant
   #   the module or class including AbstractType
   #
-  # @return [self]
+  # @return [undefined]
   #
   # @api private
   def self.included(descendant)
     super
     descendant.extend(ClassMethods)
-    self
   end
+
+  private_class_method :included
 
   module ClassMethods
 
