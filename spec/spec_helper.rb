@@ -12,6 +12,7 @@ if ENV['COVERAGE'] == 'true'
 end
 
 require 'abstract_type'
+require 'backports'
 require 'rspec'
 require 'rspec/autorun' if RUBY_VERSION < '1.9'
 
