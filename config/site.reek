@@ -46,7 +46,9 @@ UncommunicativeModuleName:
   - !ruby/regexp /[0-9]$/
 NestedIterators:
   ignore_iterators: []
-  exclude: []
+  exclude: [
+    'AbstractType::ClassMethods#create_abstract_singleton_method'
+  ]
   enabled: true
   max_allowed_nesting: 1
 LongMethod:
