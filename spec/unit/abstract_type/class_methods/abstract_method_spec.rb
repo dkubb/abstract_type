@@ -32,7 +32,7 @@ describe AbstractType::ClassMethods, '#abstract_method' do
       error.message.should == 'Subclass#some_method is not implemented'
       file, line = error.backtrace.first.split(':', 2)
       File.expand_path(file).should eql(File.expand_path('../../../../../lib/abstract_type.rb', __FILE__))
-      line.to_i.should be(111)
+      line.to_i.should be(110)
     else
       raise 'expected error not raised'
     end
