@@ -24,25 +24,8 @@ describe AbstractType::ClassMethods, '#abstract_method' do
       to(true)
   end
 
-  specification = proc do
+  it 'creates a method that raises an exception' do
     subject
-    begin
-      subclass.new.some_method
-    rescue NotImplementedError => error
-      error.message.should == 'Subclass#some_method is not implemented'
-      file, line = error.backtrace.first.split(':', 2)
-      File.expand_path(file).should eql(File.expand_path('../../../../../lib/abstract_type.rb', __FILE__))
-      line.to_i.should be(111)
-    else
-      raise 'expected error not raised'
-    end
-  end
-
-  it 'sets the file and line number properly' do
-    if RUBY_PLATFORM.include?('java')
-      pending('Kernel#caller returns the incorrect line number in JRuby', &specification)
-    else
-      instance_eval(&specification)
-    end
+    expect { subclass.new.some_method }.to raise_error(NotImplementedError, 'Subclass#some_method is not implemented')
   end
 end
