@@ -3,7 +3,7 @@ abstract_type
 
 [![Build Status](https://secure.travis-ci.org/dkubb/abstract_type.png?branch=master)](http://travis-ci.org/dkubb/abstract_type)
 [![Dependency Status](https://gemnasium.com/dkubb/abstract_type.png)](https://gemnasium.com/dkubb/abstract_type)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/dkubb/abstract_type)
+[![Code Climate](https://codeclimate.com/github/dkubb/abstract_type.png)](https://codeclimate.com/github/dkubb/abstract_type)
 
 This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
 It allows to declare abstract_type classes and modules in an unobstrusive way.
