@@ -45,7 +45,7 @@ module AbstractType
     #
     # @example
     #   class Foo
-    #     include Abstract
+    #     include AbstractType
     #
     #     # Create an abstract instance method
     #     abstract_method :some_method
@@ -65,7 +65,7 @@ module AbstractType
     #
     # @example
     #   class Foo
-    #     include Abstract
+    #     include AbstractType
     #
     #     # Create an abstract instance method
     #     abstract_singleton_method :some_method
@@ -114,4 +114,4 @@ module AbstractType
     end
 
   end # module ClassMethods
-end # module Abstract
+end # module AbstractType
