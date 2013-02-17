@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'https://github.com/dkubb/abstract_type'
 
   gem.files            = `git ls-files`.split($/)
-  gem.test_files       = `git ls-files -- {spec}/*`.split($/)
+  gem.test_files       = `git ls-files -- spec/unit`.split($/)
   gem.extra_rdoc_files = %w[LICENSE README.md TODO]
 
   gem.add_runtime_dependency('backports', '~> 2.8.2')
