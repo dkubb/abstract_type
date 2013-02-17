@@ -24,6 +24,11 @@ describe AbstractType::ClassMethods, '#abstract_method' do
       to(true)
   end
 
+  it 'creates an abstract method with the expected arity' do
+    subject
+    object.instance_method(:some_method).arity.should be(-1)
+  end
+
   it 'creates a method that raises an exception' do
     subject
     expect { subclass.new.some_method }.to raise_error(NotImplementedError, 'Subclass#some_method is not implemented')
