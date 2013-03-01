@@ -2,7 +2,7 @@
 
 module AbstractType
 
-  # Unreleased gem version
+  # Gem version
   VERSION = '0.0.5'.freeze
 
 end # module AbstractType
