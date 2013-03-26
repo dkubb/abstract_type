@@ -1,9 +1,17 @@
 abstract_type
 ==============
 
-[![Build Status](https://secure.travis-ci.org/dkubb/abstract_type.png?branch=master)](http://travis-ci.org/dkubb/abstract_type)
-[![Dependency Status](https://gemnasium.com/dkubb/abstract_type.png)](https://gemnasium.com/dkubb/abstract_type)
-[![Code Climate](https://codeclimate.com/github/dkubb/abstract_type.png)](https://codeclimate.com/github/dkubb/abstract_type)
+[![Gem Version](https://badge.fury.io/rb/abstract_type.png)][gem]
+[![Build Status](https://secure.travis-ci.org/dkubb/abstract_type.png?branch=master)][travis]
+[![Dependency Status](https://gemnasium.com/dkubb/abstract_type.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/dkubb/abstract_type.png)][codeclimate]
+[![Coverage Status](https://coveralls.io/repos/dkubb/abstract_type/badge.png?branch=master)][coveralls]
+
+[gem]: https://rubygems.org/gems/abstract_type
+[travis]: https://travis-ci.org/dkubb/abstract_type
+[gemnasium]: https://gemnasium.com/dkubb/abstract_type
+[codeclimate]: https://codeclimate.com/github/dkubb/abstract_type
+[coveralls]: https://coveralls.io/r/dkubb/abstract_type
 
 This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
 It allows to declare abstract_type classes and modules in an unobstrusive way.
