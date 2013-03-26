@@ -92,10 +92,8 @@ module AbstractType
     #
     # @api private
     def create_abstract_singleton_method(name)
-      singleton_class.class_eval do
-        define_method(name) do |*|
-          raise NotImplementedError, "#{inspect}.#{name} is not implemented"
-        end
+      define_singleton_method(name) do |*|
+        raise NotImplementedError, "#{inspect}.#{name} is not implemented"
       end
     end
 
