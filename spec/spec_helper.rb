@@ -1,7 +1,15 @@
 # encoding: utf-8
 
+require 'devtools/spec_helper'
+
 if ENV['COVERAGE'] == 'true'
   require 'simplecov'
+  require 'coveralls'
+
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
 
   SimpleCov.start do
     command_name     'spec:unit'
@@ -12,8 +20,6 @@ if ENV['COVERAGE'] == 'true'
 end
 
 require 'abstract_type'
-require 'rspec'
-require 'rspec/autorun' if RUBY_VERSION < '1.9'
 
 # require spec support files and shared behavior
 Dir[File.expand_path('../{support,shared}/**/*.rb', __FILE__)].each do |file|
