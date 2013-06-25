@@ -13,7 +13,7 @@ abstract_type
 [codeclimate]: https://codeclimate.com/github/dkubb/abstract_type
 [coveralls]: https://coveralls.io/r/dkubb/abstract_type
 
-This is a small standalone gem featuring a module ripped out from [veritas](https://github.com/dkubb/veritas).
+This is a small standalone gem featuring a module ripped out from [axiom](https://github.com/dkubb/axiom).
 It allows to declare abstract_type classes and modules in an unobstrusive way.
 
 Installation
