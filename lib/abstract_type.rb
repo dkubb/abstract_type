@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'backports'
-
 # Module to allow class and methods to be abstract
 module AbstractType
 
