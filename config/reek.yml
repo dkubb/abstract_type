@@ -47,7 +47,7 @@ UncommunicativeModuleName:
 NestedIterators:
   ignore_iterators: []
   exclude: [
-    'AbstractType::ClassMethods#create_abstract_singleton_method'
+    'AbstractType::AbstractMethodDeclarations#create_abstract_singleton_method'
   ]
   enabled: true
   max_allowed_nesting: 1
