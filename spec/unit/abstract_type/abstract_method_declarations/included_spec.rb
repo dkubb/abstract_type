@@ -9,9 +9,11 @@ describe AbstractType, '.included' do
   let(:klass)  { Class.new       }
 
   it 'extends the klass' do
-    expect(klass.singleton_class).to_not include(described_class::AbstractMethodDeclarations)
+    expect(klass.singleton_class)
+      .to_not include(described_class::AbstractMethodDeclarations)
     klass.send(:include, subject)
-    expect(klass.singleton_class).to include(described_class::AbstractMethodDeclarations)
+    expect(klass.singleton_class)
+      .to include(described_class::AbstractMethodDeclarations)
   end
 
   it 'delegates to the ancestor' do
