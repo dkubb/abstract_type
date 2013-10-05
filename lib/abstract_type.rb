@@ -111,3 +111,5 @@ module AbstractType
 
   end # module ClassMethods
 end # module AbstractType
+
+require 'abstract_type/version'
