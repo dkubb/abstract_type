@@ -2,7 +2,8 @@
 
 require 'spec_helper'
 
-describe AbstractType::ClassMethods, '#abstract_singleton_method' do
+describe AbstractType::AbstractMethodDeclarations,
+         '#abstract_singleton_method' do
   subject { object.abstract_singleton_method(:some_method) }
 
   let(:object)   { Class.new { include AbstractType } }
