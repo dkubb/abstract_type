@@ -25,7 +25,12 @@ describe AbstractType, '.create_new_method' do
     context 'called on the class' do
       let(:object) { abstract_type }
 
-      specify { expect { subject }.to raise_error(NotImplementedError, "#{object} is an abstract type") }
+      specify do
+        expect { subject }.to raise_error(
+          NotImplementedError,
+          "#{object} is an abstract type"
+        )
+      end
     end
   end
 
@@ -43,7 +48,12 @@ describe AbstractType, '.create_new_method' do
     context 'called on the class' do
       let(:object) { abstract_type }
 
-      specify { expect { subject }.to raise_error(NotImplementedError, "#{object} is an abstract type") }
+      specify do
+        expect { subject }.to raise_error(
+          NotImplementedError,
+          "#{object} is an abstract type"
+        )
+      end
     end
   end
 

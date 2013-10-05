@@ -19,18 +19,21 @@ describe AbstractType::AbstractMethodDeclarations, '#abstract_method' do
   it { should equal(object) }
 
   it 'creates an abstract method' do
-    expect { subject }.to change { subclass.method_defined?(:some_method) }.
-      from(false).
-      to(true)
+    expect { subject }.to change { subclass.method_defined?(:some_method) }
+      .from(false)
+      .to(true)
   end
 
   it 'creates an abstract method with the expected arity' do
     subject
-    object.instance_method(:some_method).arity.should be(-1)
+    expect(object.instance_method(:some_method).arity).to be(-1)
   end
 
   it 'creates a method that raises an exception' do
     subject
-    expect { subclass.new.some_method }.to raise_error(NotImplementedError, 'Subclass#some_method is not implemented')
+    expect { subclass.new.some_method }.to raise_error(
+      NotImplementedError,
+      'Subclass#some_method is not implemented'
+    )
   end
 end

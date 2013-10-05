@@ -10,10 +10,11 @@ Gem::Specification.new do |gem|
   gem.description = 'Module to declare abstract classes and methods'
   gem.summary     = gem.description
   gem.homepage    = 'https://github.com/dkubb/abstract_type'
+  gem.license     = 'MIT'
 
   gem.files            = `git ls-files`.split($/)
   gem.test_files       = `git ls-files -- spec/unit`.split($/)
-  gem.extra_rdoc_files = %w[LICENSE README.md TODO]
+  gem.extra_rdoc_files = %w[LICENSE README.md CONTRIBUTING.md TODO]
 
   gem.add_development_dependency('bundler', '~> 1.3', '>= 1.3.5')
 end
