@@ -16,22 +16,24 @@ describe AbstractType, '.create_new_method' do
       end
     end
 
-    context 'called on a subclass' do
-      let(:object) { Class.new(abstract_type) }
+    it_behaves_like 'AbstractType.create_new_method'
+  end
 
-      it { should be_instance_of(object) }
-    end
+  context 'with a block' do
+    subject { object.new(:foo) { nil } }
 
-    context 'called on the class' do
-      let(:object) { abstract_type }
+    let(:abstract_type) do
+      Class.new do
+        include AbstractType
 
-      specify do
-        expect { subject }.to raise_error(
-          NotImplementedError,
-          "#{object} is an abstract type"
-        )
+        def initialize(foo)
+          @foo = foo
+          yield
+        end
       end
     end
+
+    it_behaves_like 'AbstractType.create_new_method'
   end
 
   context 'without arguments' do
@@ -39,22 +41,7 @@ describe AbstractType, '.create_new_method' do
 
     let(:abstract_type) { Class.new { include AbstractType } }
 
-    context 'called on a subclass' do
-      let(:object) { Class.new(abstract_type) }
-
-      it { should be_instance_of(object) }
-    end
-
-    context 'called on the class' do
-      let(:object) { abstract_type }
-
-      specify do
-        expect { subject }.to raise_error(
-          NotImplementedError,
-          "#{object} is an abstract type"
-        )
-      end
-    end
+    it_behaves_like 'AbstractType.create_new_method'
   end
 
   context 'on an class that doesn\'t have Object as its superclass' do
@@ -62,19 +49,6 @@ describe AbstractType, '.create_new_method' do
 
     let(:abstract_type) { Class.new(RuntimeError) { include AbstractType } }
 
-    context 'called on a subclass' do
-      let(:object) { Class.new(abstract_type) }
-
-      it { should be_instance_of(object) }
-    end
-
-    context 'called on the class' do
-      let(:object) { abstract_type }
-
-      specify do
-        expect { subject }
-          .to raise_error(NotImplementedError, "#{object} is an abstract type")
-      end
-    end
+    it_behaves_like 'AbstractType.create_new_method'
   end
 end

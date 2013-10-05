@@ -16,6 +16,12 @@ describe AbstractType, '.included' do
       .to include(described_class::AbstractMethodDeclarations)
   end
 
+  it 'overrides the new singleton method' do
+    expect(klass.method(:new).owner).to eq(Class)
+    klass.send(:include, subject)
+    expect(klass.method(:new).owner).to eq(klass.singleton_class)
+  end
+
   it 'delegates to the ancestor' do
     included_ancestor = false
     subject.extend Module.new {
