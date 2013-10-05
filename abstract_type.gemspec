@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
   gem.description = 'Module to declare abstract classes and methods'
   gem.summary     = gem.description
   gem.homepage    = 'https://github.com/dkubb/abstract_type'
+  gem.license     = 'MIT'
 
   gem.files            = `git ls-files`.split($/)
   gem.test_files       = `git ls-files -- spec/unit`.split($/)
