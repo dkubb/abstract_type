@@ -105,7 +105,7 @@ module AbstractType
     # @api private
     def create_abstract_instance_method(name)
       define_method(name) do |*|
-        raise NotImplementedError, "#{self.class.inspect}##{name} is not implemented"
+        raise NotImplementedError, "#{self.class}##{name} is not implemented"
       end
     end
 
