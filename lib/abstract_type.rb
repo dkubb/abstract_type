@@ -59,7 +59,7 @@ module AbstractType
     #
     # @api public
     def abstract_method(*names)
-      names.each { |name| create_abstract_instance_method(name) }
+      names.each(&method(:create_abstract_instance_method))
       self
     end
 
@@ -79,7 +79,7 @@ module AbstractType
     #
     # @api private
     def abstract_singleton_method(*names)
-      names.each { |name| create_abstract_singleton_method(name) }
+      names.each(&method(:create_abstract_singleton_method))
       self
     end
 
