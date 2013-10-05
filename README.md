@@ -16,29 +16,6 @@ abstract_type
 This is a small standalone gem featuring a module ripped out from [axiom](https://github.com/dkubb/axiom).
 It allows to declare abstract_type classes and modules in an unobstrusive way.
 
-Installation
-------------
-
-With Rubygems:
-
-```bash
-$ gem install abstract_type
-$ irb -rubygems
->> require 'abstract_type'
-=> true
-```
-
-With git and local working copy:
-
-```bash
-$ git clone git://github.com/dkubb/abstract_type.git
-$ cd abstract_type
-$ rake install
-$ irb -rubygems
->> require 'abstract_type'
-=> true
-```
-
 Examples
 --------
 
