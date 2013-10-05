@@ -13,31 +13,35 @@ module AbstractType
   # @api private
   def self.included(descendant)
     super
-    descendant.extend(ClassMethods)
+    create_new_method(descendant)
+    descendant.extend(AbstractMethodDeclarations)
   end
 
   private_class_method :included
 
-  module ClassMethods
-
-    # Instantiate a new object
-    #
-    # Ensures that the instance cannot be of the abstract type
-    # and must be a descendant.
-    #
-    # @example
-    #   object = AbstractType.new
-    #
-    # @return [Object]
-    #
-    # @api public
-    def new(*)
-      if superclass.equal?(Object)
+  # Define the new method on the abstract type
+  #
+  # Ensures that the instance cannot be of the abstract type
+  # and must be a descendant.
+  #
+  # @param [Class] abstract_class
+  #
+  # @return [undefined]
+  #
+  # @api private
+  def self.create_new_method(abstract_class)
+    abstract_class.define_singleton_method(:new) do |*args, &block|
+      if equal?(abstract_class)
         raise NotImplementedError, "#{inspect} is an abstract type"
       else
-        super
+        super(*args, &block)
       end
     end
+  end
+
+  private_class_method :create_new_method
+
+  module AbstractMethodDeclarations
 
     # Create abstract instance methods
     #
@@ -109,7 +113,7 @@ module AbstractType
       end
     end
 
-  end # module ClassMethods
+  end # module AbstractMethodDeclarations
 end # module AbstractType
 
 require 'abstract_type/version'
