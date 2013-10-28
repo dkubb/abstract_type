@@ -3,6 +3,6 @@
 module AbstractType
 
   # Gem version
-  VERSION = '0.0.6'.freeze
+  VERSION = '0.0.7'.freeze
 
 end # module AbstractType
