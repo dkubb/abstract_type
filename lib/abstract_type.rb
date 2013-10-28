@@ -32,7 +32,7 @@ module AbstractType
   def self.create_new_method(abstract_class)
     abstract_class.define_singleton_method(:new) do |*args, &block|
       if equal?(abstract_class)
-        raise NotImplementedError, "#{inspect} is an abstract type"
+        fail NotImplementedError, "#{inspect} is an abstract type"
       else
         super(*args, &block)
       end
@@ -95,7 +95,7 @@ module AbstractType
     # @api private
     def create_abstract_singleton_method(name)
       define_singleton_method(name) do |*|
-        raise NotImplementedError, "#{inspect}.#{name} is not implemented"
+        fail NotImplementedError, "#{inspect}.#{name} is not implemented"
       end
     end
 
@@ -109,7 +109,7 @@ module AbstractType
     # @api private
     def create_abstract_instance_method(name)
       define_method(name) do |*|
-        raise NotImplementedError, "#{self.class}##{name} is not implemented"
+        fail NotImplementedError, "#{self.class}##{name} is not implemented"
       end
     end
 
