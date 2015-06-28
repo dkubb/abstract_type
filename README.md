@@ -1,7 +1,7 @@
 # abstract_type
 
 This is a small standalone gem featuring a module ripped out from [axiom](https://github.com/dkubb/axiom).
-It allows to declare abstract_type classes and modules in an unobstrusive way.
+It allows to declare [Abstract type](https://en.wikipedia.org/wiki/Abstract_type) classes and modules in an unobstrusive way.
 
 [![Gem Version](https://badge.fury.io/rb/abstract_type.png)][gem]
 [![Build Status](https://secure.travis-ci.org/dkubb/abstract_type.png?branch=master)][travis]
